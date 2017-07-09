@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="row dropdown" >
+    <div class="col-md-offset-2 col-sm-offset-2 col-xs-offset-2 col-sm-8 col-md-8 col-xs-8 search-col">
+      <div class="row">
+        <select class="col-md-2 col-xs-2 selectItem" [(ngModel)]="selectedValue">
+          <option *ngFor="let item of selectedItems" >{{item}}</option>
+        </select>
+        <input [(ngModel)]="search" class="search-input col-md-10 col-xs-10" placeholder="search...">
+
+      </div>
+    </div>
+
+    <!--<div class="dropdown">
+
+      <input  [(ngModel)]="searchByDate" class="search-input" type="text" placeholder="Search by date" id="date"/>
+      <button  type="button" data-toggle="dropdown" [className]="'search-button dropdown-toggle'">
+        <span class="glyphicon glyphicon-search"></span>
+      </button>
+
+    </div>
+
+    <div class="dropdown">
+      <input  [(ngModel)]="searchByCamera" [className]="'search-input'" type="text" placeholder="Search by camera"  id="searchByCamera"/>
+      <button class="search-button dropdown-toggle" type="button" data-toggle="dropdown">
+        <span class="glyphicon glyphicon-search"></span>
+      </button>
+
+    </div>-->
+  </div>
+
+  <div class="'row detected-container'" *ngFor="let camera of ocw.cameras | detectedObjectFilter : 'cameraName' : search : selectedValue" >
+    <div  class="detected-object col-md-offset-2 col-sm-offset-2 col-xs-offset-2 col-sm-8 col-md-8 col-xs-8" *ngFor="let image of camera.images | detectedObjectFilter : 'imageDate' : search : selectedValue">
+      <img class="detected-image" src="{{image.imageName}}">
+      <div class="detected-data">
+        <p><b>{{camera.cameraName}}</b></p>
+        <p>{{image.imageDate}}</p>
+      </div>
+    </div>
+  </div>
+
+</div>

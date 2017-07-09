@@ -1,0 +1,18 @@
+nav {
+  position: relative;
+}
+.navbar {
+  margin-bottom: 0px;
+  background-color: black;
+  color: white;
+}
+
+.nav {
+  width: 60%;
+  float: none;
+  margin: auto;
+}
+
+.navbar-brand {
+
+}
