@@ -10,6 +10,8 @@ import { NavigationBarComponent } from './navigation-bar/navigation-bar.componen
 import { DetcObjComponent } from './detc-obj/detc-obj.component';
 import { NotFoundComponentComponent } from './not-found-component/not-found-component.component';
 
+
+// TODO: Separate Routers defintion from modules
 const appRoutes: Routes =[
   { path: 'detectedObject', component: DetcObjComponent},
   { path: '**', component: NotFoundComponentComponent }
